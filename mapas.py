@@ -21,11 +21,11 @@ def crear_mapa(matriz):
                 line.add_to(m)
                 ady[i][j], ady[j][i] = 0,0
 
-    # agragamos rutas criticas
+    # agregamos rutas criticas
     for i in range (len (matriz)):
         for j in range (len (matriz[i])):
             if matriz[i][j] != 0:
-                line = PolyLine (locations=[ciudades[i], ciudades[j]], color="blue", weight=4)
+                line = PolyLine (locations=[ciudades[i], ciudades[j]], color="blue", weight=5,tooltip=matriz[i][j])
                 line.add_to (m)
                 matriz[i][j], matriz[j][i] = 0, 0
 
