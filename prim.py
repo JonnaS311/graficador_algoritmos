@@ -6,7 +6,6 @@ class algoritmo_prim():
     def __init__(self, nodo_incial_id):
         self.solucion = []
         self.nodo_incial = lista_ciudades[nodo_incial_id]
-        pass
 
     def prim(self,nodo_inicial:Ciudad):
         # creamos un conjunto en donde guardamos los nodos conectados
@@ -48,7 +47,7 @@ class algoritmo_prim():
 
         return camino
 
-    def crear_adyacentes(self,solucion):
+    def __crear_adyacentes(self,solucion):
         matriz = [[0 for _ in range(len (adyacentes))] for _ in range(len (adyacentes))]
         for i in solucion:
             matriz[i[0]][i[1]] = adyacentes[i[0]][i[1]]
@@ -57,7 +56,7 @@ class algoritmo_prim():
 
     def arbol_de_expancion(self):
         self.solucion = self.prim(lista_ciudades[0])
-        matriz = self.crear_adyacentes (self.solucion)
+        matriz = self.__crear_adyacentes (self.solucion)
         return self.solucion, matriz
 
 if __name__ == '__main__':

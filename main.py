@@ -41,7 +41,7 @@ def main(page: ft.Page):
             os.system (f"start {archivo_html}")
 
     def generar_dij(e):
-        if ciudades.value is not None:
+        if ciudades.value is not None and ciudades_aux.value is not None:
             matriz,distancia,caminos = dijkstra.algoritmo_dijkstra().camino_entre_ciudades(int (ciudades.value),int (ciudades_aux.value))
             text_info = "\n"
             for i in caminos:
